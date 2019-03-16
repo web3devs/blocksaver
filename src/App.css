@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 body {
   margin: 0;
 }
@@ -16,6 +12,7 @@ body {
 }
 
 .NavBar {
+  max-height: 10vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -24,9 +21,10 @@ body {
   max-width: 100%;
 }
 
-#map {
+.map {
    height: 100%;
  }
+
 
 .ReportForm {
   display: flex;
@@ -40,8 +38,8 @@ body {
 button {
   display: inline-block;
   border-radius: 10px;
-  background-color: white;
-  color: black;
+  background-color: rgba(110, 198, 152);
+  color: #FFFFFF;
   border-color: rgba(110, 198, 152);
   border-width: 2px;
   text-align: center;
@@ -51,38 +49,24 @@ button {
   margin: 5px;
 }
 
-button:hover, li:hover {
-  background-color: #FFFFFF;
+button:hover {
+  background-color: white;
   color: rgba(110, 198, 152);
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
+.issues {
+  max-height: 20vh;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 100%;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    top:45px;
-    right:0px;
-    width: 200px;
-    background-color: white;
-    font-weight:bold;
-    position: absolute;
-
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-li a {
-    color: #000;
-    text-decoration: none;
-}
-li {
-    padding: 8px 16px;
-    border-bottom: 1px solid #e5e5e5;
-}
-li:last-child {
-    border-bottom: none;
+.issue {
+  color: rgba(110, 198, 152);
+  padding: 10px;
+  font-size: 20px;
 }

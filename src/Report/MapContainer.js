@@ -48,23 +48,20 @@ class MapContainer extends Component {
       console.warn(`ERROR(${err.code}): ${err.message}`);
     }
 
-  //  lat: 35.1524164, lng: -90.01367979999999
-
    render() {
+     return(
+        <div className="MapContainer">
+          {this.state.loaded ?
+            <ReportMap
+              center={{lat: this.state.lat, lng: this.state.lng}}
+              containerElement={ <div style={{ height: `500px`, width: '100%' }} /> }
+              mapElement={ <div style={{ height: `100%` }} /> }
+            />
+            : <p>Loading...</p>
+          }
 
-   return(
-      <div>
-        {this.state.loaded ?
-          <ReportMap
-            center={{lat: this.state.lat, lng: this.state.lng}}
-            containerElement={ <div style={{ height: `500px`, width: '100%' }} /> }
-            mapElement={ <div style={{ height: `100%` }} /> }
-          />
-          : <p>Loading...</p>
-        }
-
-      </div>
-   );
+        </div>
+     );
    }
 };
 

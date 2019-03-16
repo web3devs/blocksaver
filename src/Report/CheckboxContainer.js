@@ -16,16 +16,21 @@ class CheckboxContainer extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div className="issues">
         {
           checkboxes.map(item => (
-            <label key={item.key}>
-              {item.label}
-              <Checkbox name={item.name} checked={this.state.checkedItems.get(item.name)} onChange={this.handleChange} />
-            </label>
+              <div className="issue">
+                <label key={item.key}>
+                  <Checkbox
+                    name={item.name}
+                    checked={this.state.checkedItems.get(item.name)}
+                    onChange={this.handleChange} />
+                    {item.label}
+                </label>
+              </div>
           ))
         }
-      </React.Fragment>
+      </div>
     );
   }
 }
