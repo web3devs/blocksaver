@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 
-import CheckinDisplay from "./CheckinDisplay";
+import AccountDisplay from "./AccountDisplay";
 import BadgeField from "./BadgeField";
+import CheckinDisplay from "./CheckinDisplay";
 
 import "../App.css";
 
@@ -44,9 +45,13 @@ class Profile extends Component {
   renderAccount = () => {
     return (
       <div>
-        <div>Account</div>
-        <div>- Editable address field</div>
-        <div>- This value is passed to web3</div>
+        <CheckinDisplay
+          title="Account"
+          data={"0x123456789abcdef"}
+          onClick={() => {
+            alert("onClick - Edit Account Address, not implimented yet");
+          }}
+        />
       </div>
     );
   };
