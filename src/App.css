@@ -24,8 +24,11 @@ body {
   max-width: 100%;
 }
 
-#map {
-   height: 100%;
+.map {
+ }
+
+ .mapMargin {
+   margin: 40px;
  }
 
 button {
