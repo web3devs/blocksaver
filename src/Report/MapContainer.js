@@ -55,9 +55,9 @@ class MapContainer extends Component {
           <ReportMap
             center={{ lat: this.state.lat, lng: this.state.lng }}
             containerElement={
-              <div style={{ height: `500px`, width: "100%" }} />
+              <div className="mapSize" />
             }
-            mapElement={<div style={{ height: `100%` }} />}
+            mapElement={<div className="mapElement"/>}
           />
         ) : (
           <p>Loading...</p>
