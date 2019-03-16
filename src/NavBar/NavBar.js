@@ -21,7 +21,7 @@ class NavBar extends Component {
     // console.log(value);
     // console.log(blockNumber);
     console.log(
-      contract.balanceOf(walletAddress, 4042625, err => {
+      contract.balanceOf(walletAddress, err => {
         alert(err);
       })
     );
