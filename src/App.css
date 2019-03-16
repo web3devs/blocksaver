@@ -27,7 +27,7 @@ body {
 #map {
    height: 100%;
  }
- 
+
 button {
   display: inline-block;
   border-radius: 10px;
@@ -38,7 +38,7 @@ button {
   text-align: center;
   font-size: 22px;
   padding: 20px;
-  /* width: 200px; */
+  outline: none;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;

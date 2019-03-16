@@ -18,7 +18,7 @@ class NavBar extends Component {
           <Link to="/"><img src={back} alt=""/></Link>
         }
 
-        <h1>Points</h1>
+        <h1>351 Points</h1>
       </div>
     );
   }
