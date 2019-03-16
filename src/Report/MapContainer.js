@@ -5,14 +5,15 @@ import { withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 const options = {
   enableHighAccuracy: true,
   timeout: 5000,
-  maximumAge: 0
+  maximumAge: 0,
 };
 
 const ReportMap = withGoogleMap(props => {
   return (
     <GoogleMap
       center={{ lat: props.center.lat, lng: props.center.lng }}
-      zoom={13}
+      zoom={18}
+      mapTypeId={window.google.maps.MapTypeId.SATELLITE}
     >
       <Marker position={{ lat: props.center.lat, lng: props.center.lng }} />
     </GoogleMap>
