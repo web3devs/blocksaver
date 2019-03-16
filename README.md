@@ -239,3 +239,63 @@ crowdsale contract addres:
 	"sourceMap": "110:2979:0:-;;;381:5;355:31;;;;;;;;;;;;;;;;;;;;415:5;392:28;;;;;;;;;;;;;;;;;;;;640:469;8:9:-1;5:2;;;30:1;27;20:12;5:2;640:469:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;870:18;856:11;;:32;;;;;;;;;;;;;;;;;;934:7;912:19;:29;898:11;:43;;;;988:9;968:17;:29;962:3;:35;951:8;:46;;;;1038:7;1015:20;:30;1007:5;:38;;;;1075:26;1055:11;;:47;;;;;;;;;;;;;;;;;;640:469;;;;;110:2979;;;;;;"
 }
 ```
+
+<h1> Token ABI </h1>
+
+```
+[
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"name": "_value",
+				"type": "uint256"
+			}
+		],
+		"name": "transfer",
+		"outputs": [
+			{
+				"name": "success",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"name": "initialSupply",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	}
+]
+```
