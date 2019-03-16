@@ -9,7 +9,7 @@ import "../App.css";
 class Profile extends Component {
   render() {
     return (
-      <div className="Map">
+      <div className="Profile">
         {this.renderLifetimeCheckins()}
         {this.renderLastCheckin()}
         {this.renderBadges()}
