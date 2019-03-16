@@ -8,7 +8,7 @@ import back from "./left-arrow.png";
 import profile from "./user.png";
 import ABI from "../ABI/ABI";
 
-let tokenAddress = "0xf1d4d34d7a16d5b1f9dc19e9ea9675ab0b838661";
+let tokenAddress = "0xD3724b06f9b16373d714a88adCc0289389aB3869";
 let walletAddress = window.web3.eth.defaultAccount;
 
 let contract = window.web3.eth.contract(ABI).at(tokenAddress);
