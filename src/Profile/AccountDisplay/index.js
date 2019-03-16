@@ -26,7 +26,7 @@ class AccountDisplay extends Component {
         <input
           id="address"
           value={this.state.address}
-          onChange={e => this.onChange(e)}
+          onChange={this.state.edit === true ? e => this.onChange(e) : null}
         />
         <button
           onClick={() => {
