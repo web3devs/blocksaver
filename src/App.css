@@ -83,3 +83,8 @@ button:hover {
   padding: 10px;
   font-size: 20px;
 }
+
+.Profile {
+  display: flex;
+  flex-direction: column;
+}
