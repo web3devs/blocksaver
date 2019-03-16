@@ -6,7 +6,7 @@ import { Link, withRouter } from "react-router-dom";
 import "../App.css";
 import back from "./left-arrow.png";
 import profile from "./user.png";
-import ABI from "../ABI/ABI";
+import ABI from "../ABI/tokenAbi";
 
 let tokenAddress = "0xD3724b06f9b16373d714a88adCc0289389aB3869";
 let walletAddress = window.web3.eth.defaultAccount;
