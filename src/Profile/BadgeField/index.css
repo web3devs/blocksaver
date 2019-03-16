@@ -19,3 +19,9 @@
   color: rgba(110, 198, 152);
   border-color: rgba(110, 198, 152);
 }
+
+.Badge{
+  border-radius: 1800px;
+  max-height: 10vh;
+  margin: 5px;
+}

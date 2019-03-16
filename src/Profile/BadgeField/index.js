@@ -5,10 +5,13 @@ class BadgeField extends Component {
 
   render() {
     const { title, data, ...rest } = this.props;
+
     return (
       <div className="Display">
         <div>{title}</div>
-        <img src={data[0]} alt="" />
+        {data.map(badge => (
+          <img className="Badge" src={badge} alt="" />
+        ))}
       </div>
     );
   }
