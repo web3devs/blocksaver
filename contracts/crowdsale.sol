@@ -1,7 +1,9 @@
-pragma solidity >=0.4.22 <0.6.0;
+pragma solidity ^0.4.18;
+
 interface token {
     function transfer(address receiver, uint amount) external;
 }
+
 contract Crowdsale {
     address public beneficiary;
     uint public fundingGoal;
@@ -10,14 +12,14 @@ contract Crowdsale {
     uint public price;
     token public tokenReward;
     mapping(address => uint256) public balanceOf;
-    mapping(bytes32 => uint256) public _locations;
     bool fundingGoalReached = false;
     bool crowdsaleClosed = false;
-    uint public tokenEmission;
+
     event GoalReached(address recipient, uint totalAmountRaised);
-    event SendReport(address _from, bytes32 _location, bytes32 _message);
+    event FundTransfer(address backer, string _value, string _message);
+
     /**
-     * Constructor
+     * Constructor function
      *
      * Setup the owner
      */
@@ -33,27 +35,29 @@ contract Crowdsale {
         deadline = now + durationInMinutes * 1 minutes;
         price = etherCostOfEachToken * 1 ether;
         tokenReward = token(addressOfTokenUsedAsReward);
-        tokenEmission = 1;
     }
+
+    function checkIn(string _value, string _message) public {
+        tokenReward.transfer(msg.sender, 1);
+        emit FundTransfer(msg.sender, _value, _message);
+    }
+
+
     /**
      * Fallback function
      *
      * The function without name is the default function that is called whenever anyone sends funds to a contract
      */
-    function () payable external {
+    function () payable public {
         require(!crowdsaleClosed);
-        uint amount = tokenEmission;
+        uint amount = msg.value;
         balanceOf[msg.sender] += amount;
         amountRaised += amount;
-        tokenReward.transfer(msg.sender, tokenEmission);
+        tokenReward.transfer(msg.sender, amount / price);
     }
 
-    function checkIn(bytes32 coords, bytes32 _message) public {
-        tokenReward.transfer(msg.sender, tokenEmission);
-        _locations[coords] += tokenEmission;
-        emit SendReport(msg.sender, coords, _message);
-    }
     modifier afterDeadline() { if (now >= deadline) _; }
+
     /**
      * Check if goal was reached
      *
@@ -66,6 +70,8 @@ contract Crowdsale {
         }
         crowdsaleClosed = true;
     }
+
+
     /**
      * Withdraw the funds
      *
@@ -84,8 +90,9 @@ contract Crowdsale {
                 }
             }
         }
+
         if (fundingGoalReached && beneficiary == msg.sender) {
-            if (msg.sender.send(amountRaised)) {
+            if (beneficiary.send(amountRaised)) {
             } else {
                 //If we fail to send the funds to beneficiary, unlock funders balance
                 fundingGoalReached = false;
