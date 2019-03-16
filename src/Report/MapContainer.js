@@ -29,6 +29,7 @@ class MapContainer extends Component {
         lat: crd.longitude,
         loaded: true,
       })
+      console.log(this.state)
     }
 
     error = (err) => {
@@ -38,9 +39,9 @@ class MapContainer extends Component {
   //  lat: 33.1524164, lng: -94.01367979999999
 
    render() {
-     const GoogleMapExample = withGoogleMap(props => (
+     const ReportMap = withGoogleMap(props => (
         <GoogleMap
-          defaultCenter = { { lat: 35.1524164, lng: -90.01367979999999 } }
+          center = { { lat: 35.1524164, lng: -90.01367979999999 } }
           defaultZoom = { 13 }
         >
           <Marker position={{ lat: 35.1524164, lng: -90.01367979999999 }} />
@@ -51,11 +52,11 @@ class MapContainer extends Component {
 
       <div>
         {this.state.loaded ?
-          <GoogleMapExample
+          <ReportMap
             containerElement={ <div style={{ height: `500px`, width: '100%' }} /> }
             mapElement={ <div style={{ height: `100%` }} /> }
           />
-          : null
+          : <p>Loading...</p>
         }
 
       </div>
