@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import '../App.css';
-import Dropdown from './Dropdown'
+import CheckboxContainer from './CheckboxContainer'
 
 class ReportForm extends Component {
   state = {
-      value: 'Enter the pedestrian safety issue.'
+    location: {},
+    issue: null
   }
 
   handleChange = (event) => {
@@ -17,8 +18,8 @@ class ReportForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <Dropdown />
+      <form className="ReportForm" onSubmit={this.handleSubmit}>
+        <CheckboxContainer />
         <button onClick={this.handleSubmit}>Submit Report
         </button>
       </form>
