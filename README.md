@@ -12,7 +12,7 @@ crowdsale contract addres:
 
 
 
-<h1> Crowdsale ABI 
+<h1> Crowdsale ABI </h1>
 ```
 [
 	{
@@ -227,7 +227,7 @@ crowdsale contract addres:
 	}
 ]
 ```
-<h1> Crowdsale ByteCode <h1>
+<h1> Crowdsale ByteCode </h1>
 ```
 {
 	"linkReferences": {},
