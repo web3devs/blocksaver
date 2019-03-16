@@ -21,14 +21,22 @@ body {
   max-width: 100%;
 }
 
-.map {
- }
+.Map {
+  background-color: rgba(242, 242, 242, 1);
+}
 
  .mapMargin {
-   margin: 40px;
-
+   padding: 40px;
  }
 
+.mapSize {
+  height: 60vh;
+  width: 100%;
+}
+
+.mapElement {
+  height: 100%;
+}
 
 .ReportForm {
   display: flex;
@@ -59,6 +67,7 @@ button:hover {
 }
 
 .issues {
+  overflow-y: scroll;
   max-height: 20vh;
   border-radius: 10px;
   background-color: #FFFFFF;
