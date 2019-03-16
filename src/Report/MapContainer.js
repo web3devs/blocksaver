@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import '../App.css';
-import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import React, { Component } from "react";
+import "../App.css";
+import { withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 
 const options = {
   enableHighAccuracy: true,
@@ -9,23 +9,23 @@ const options = {
 };
 
 const ReportMap = withGoogleMap(props => {
-    return (
-      <GoogleMap
-        center={{ lat: props.center.lat, lng: props.center.lng }}
-        zoom={ 13 }
-      >
+  return (
+    <GoogleMap
+      center={{ lat: props.center.lat, lng: props.center.lng }}
+      zoom={13}
+    >
       <Marker position={{ lat: props.center.lat, lng: props.center.lng }} />
-
-     </GoogleMap>
-    )
+    </GoogleMap>
+  );
 });
 
 class MapContainer extends Component {
-    state = {
-      lng: null,
-      lat: null,
-      loaded: false
-    }
+  state = {
+    lng: null,
+    lat: null,
+    loaded: false
+  };
+
 
     componentDidMount() {
       if (navigator && navigator.geolocation) {
@@ -35,34 +35,37 @@ class MapContainer extends Component {
       }
     }
 
-    success = (pos) => {
-      let crd = pos.coords;
-      this.setState({
-        lng: crd.longitude,
-        lat: crd.latitude,
-        loaded: true,
-      })
-    }
+  success = pos => {
+    let crd = pos.coords;
+    this.setState({
+      lng: crd.longitude,
+      lat: crd.latitude,
+      loaded: true
+    });
+  };
 
-    error = (err) => {
-      console.warn(`ERROR(${err.code}): ${err.message}`);
-    }
+  error = err => {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  };
 
-   render() {
-     return(
-        <div className="MapContainer">
-          {this.state.loaded ?
-            <ReportMap
-              center={{lat: this.state.lat, lng: this.state.lng}}
-              containerElement={ <div style={{ height: `500px`, width: '100%' }} /> }
-              mapElement={ <div style={{ height: `100%` }} /> }
-            />
-            : <p>Loading...</p>
-          }
+  render() {
+    return (
+      <div className="mapMargin">
+        {this.state.loaded ? (
+          <ReportMap
+            center={{ lat: this.state.lat, lng: this.state.lng }}
+            containerElement={
+              <div style={{ height: `500px`, width: "100%" }} />
+            }
+            mapElement={<div style={{ height: `100%` }} />}
+          />
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
+    );
+  }
+}
 
-        </div>
-     );
-   }
-};
 
-export default MapContainer
+export default MapContainer;
