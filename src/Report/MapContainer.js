@@ -28,7 +28,11 @@ class MapContainer extends Component {
     }
 
     componentDidMount() {
-      navigator.geolocation.getCurrentPosition(this.success, this.error, options);
+      if (navigator && navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(this.success, this.error, options);
+      } else {
+        alert("Geolocation not supported")
+      }
     }
 
     success = (pos) => {
