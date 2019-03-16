@@ -8,8 +8,8 @@ class AccountDisplay extends Component {
     address: "text"
   };
   componentDidMount() {
-    localStorage.hasOwnProperty("address")
-      ? this.setState({ address: localStorage.getItem("address") })
+    localStorage("address")
+      ? this.setState({ address: localStorage("address") })
       : this.setState({ address: "0xohhh" });
   }
 
