@@ -9,19 +9,16 @@ import profile from './user.png'
 class NavBar extends Component {
 
   render() {
-    console.log(this.props.history.location.pathname)
     return (
       <div className="NavBar">
 
         {(this.props.history.location.pathname === "/") ?
-
           <Link to="/profile"><img src={profile} alt=""/></Link>
           :
           <Link to="/"><img src={back} alt=""/></Link>
-
         }
 
-        Points
+        <h1>Points</h1>
       </div>
     );
   }
