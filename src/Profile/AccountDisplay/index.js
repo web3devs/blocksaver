@@ -1,22 +1,34 @@
 import React, { Component } from "react";
+import localStorage from "local-storage";
 import "./index.css";
 
 class AccountDisplay extends Component {
   state = {
-    edit: false
+    edit: false,
+    address: "text"
   };
+  componentDidMount() {
+    localStorage.hasOwnProperty("address")
+      ? this.setState({ address: localStorage.getItem("address") })
+      : this.setState({ address: "0xohhh" });
+  }
+
   render() {
     const { title, data, ...rest } = this.props;
     return (
       <div className="Display">
         <div>{title}</div>
-        <div>{data}</div>
+        <div>{this.state.address}</div>
         <button
           onClick={() => {
+            if (this.state.edit === true) {
+              localStorage("address", "0x0000...0000");
+              this.setState({ address: localStorage("address") });
+            }
             this.setState({ edit: !this.state.edit });
           }}
         >
-          {this.state.edit ? "edit" : "save"}
+          {!this.state.edit ? "edit" : "save"}
         </button>
       </div>
     );
