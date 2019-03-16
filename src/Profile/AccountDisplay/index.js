@@ -7,22 +7,31 @@ class AccountDisplay extends Component {
     edit: false,
     address: "text"
   };
+
   componentDidMount() {
     localStorage("address")
       ? this.setState({ address: localStorage("address") })
       : this.setState({ address: "0xohhh" });
   }
 
+  onChange = e => {
+    this.setState({ [e.target.id]: e.target.value });
+  };
+
   render() {
     const { title, data, ...rest } = this.props;
     return (
       <div className="Display">
         <div>{title}</div>
-        <div>{this.state.address}</div>
+        <input
+          id="address"
+          value={this.state.address}
+          onChange={e => this.onChange(e)}
+        />
         <button
           onClick={() => {
             if (this.state.edit === true) {
-              localStorage("address", "0x0000...0000");
+              localStorage("address", this.state.address);
               this.setState({ address: localStorage("address") });
             }
             this.setState({ edit: !this.state.edit });
