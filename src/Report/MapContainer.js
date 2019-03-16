@@ -26,14 +26,13 @@ class MapContainer extends Component {
     loaded: false
   };
 
-
-    componentDidMount() {
-      if (navigator && navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(this.success, this.error, options);
-      } else {
-        alert("Geolocation not supported")
-      }
+  componentDidMount() {
+    if (navigator && navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.success, this.error, options);
+    } else {
+      alert("Geolocation not supported")
     }
+  }
 
   success = pos => {
     let crd = pos.coords;
@@ -42,6 +41,10 @@ class MapContainer extends Component {
       lat: crd.latitude,
       loaded: true
     });
+    let location = {}
+    location["latitude"] = this.state.lat
+    location["longitude"] = this.state.lng
+    window.sessionStorage.setItem("location", JSON.stringify(location))
   };
 
   error = err => {
@@ -66,6 +69,5 @@ class MapContainer extends Component {
     );
   }
 }
-
 
 export default MapContainer;

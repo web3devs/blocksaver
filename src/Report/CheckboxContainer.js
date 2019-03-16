@@ -4,15 +4,6 @@ import checkboxes from './Checkboxes';
 import Checkbox from './Checkbox';
 
 class CheckboxContainer extends React.Component {
-  state = {
-    checkedItems: new Map(),
-  }
-
-  handleChange = (e) => {
-    const item = e.target.name;
-    const isChecked = e.target.checked;
-    this.setState(prevState => ({ checkedItems: prevState.checkedItems.set(item, isChecked) }));
-  }
 
   render() {
     return (
@@ -23,8 +14,8 @@ class CheckboxContainer extends React.Component {
                 <label key={item.key}>
                   <Checkbox
                     name={item.name}
-                    checked={this.state.checkedItems.get(item.name)}
-                    onChange={this.handleChange} />
+                    checked={this.props.checkedItems.get(item.name)}
+                    onChange={(e) => this.props.handleChange(e)} />
                     {item.label}
                 </label>
               </div>

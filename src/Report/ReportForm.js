@@ -4,22 +4,24 @@ import CheckboxContainer from './CheckboxContainer'
 
 class ReportForm extends Component {
   state = {
-    location: {},
-    issue: null
+    checkedItems: new Map(),
   }
 
-  handleChange = (event) => {
-    this.setState({value: event.target.value});
+  handleChange = (e) => {
+    const item = e.target.name;
+    const isChecked = e.target.checked;
+    this.setState(prevState => ({ checkedItems: prevState.checkedItems.set(item, isChecked) }));
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.state.checkedItems, window.sessionStorage.location)
   }
 
   render() {
     return (
       <form className="ReportForm" onSubmit={this.handleSubmit}>
-        <CheckboxContainer />
+        <CheckboxContainer handleChange={(e) => this.handleChange(e)} checkedItems={this.state.checkedItems}/>
         <button onClick={this.handleSubmit}>Submit Report
         </button>
       </form>

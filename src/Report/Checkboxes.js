@@ -1,26 +1,26 @@
 const checkboxes = [
   {
-    name: 'check-box-1',
+    name: 'Fix Pothole',
     key: 'checkBox1',
     label: 'Fix Pothole',
   },
   {
-    name: 'check-box-2',
+    name: 'Add Crosswalk',
     key: 'checkBox2',
     label: 'Add Crosswalk',
   },
   {
-    name: 'check-box-3',
+    name: 'Repair Sidewalk',
     key: 'checkBox3',
     label: 'Repair Sidewalk',
   },
   {
-    name: 'check-box-4',
+    name: 'Create Bike Lane',
     key: 'checkBox4',
     label: 'Create Bike Lane',
   },
   {
-    name: 'check-box-5',
+    name: 'Add Bus Route',
     key: 'checkBox5',
     label: 'Add Bus Route',
   },
