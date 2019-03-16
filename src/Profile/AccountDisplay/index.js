@@ -9,8 +9,8 @@ class AccountDisplay extends Component {
   };
 
   componentDidMount() {
-    localStorage("address")
-      ? this.setState({ address: localStorage("address") })
+    window.web3
+      ? this.setState({ address: window.web3.eth.defaultAccount })
       : this.setState({ address: "0xohhh" });
   }
 
