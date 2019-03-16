@@ -14,19 +14,42 @@ class Profile extends Component {
   }
 
   renderLifetimeCheckins = () => {
-    return <div>Lifetime Checkins</div>;
+    return (
+      <div>
+        <div>Lifetime Checkins</div>
+        <div>- Query contract for number of checkins</div>
+      </div>
+    );
   };
 
   renderLastCheckin = () => {
-    return <div>Last Checkin</div>;
+    return (
+      <div>
+        <div>Last Checkin</div>
+        <div>- Most recent issue reported</div>
+        <div>- Most recent GPS recorded</div>
+      </div>
+    );
   };
 
   renderBadges = () => {
-    return <div>Badges</div>;
+    return (
+      <div>
+        <div>Badges</div>
+        <div>- Render wrapping flex box</div>
+        <div>- Badges are individual components</div>
+      </div>
+    );
   };
 
   renderAccount = () => {
-    return <div>Account</div>;
+    return (
+      <div>
+        <div>Account</div>
+        <div>- Editable address field</div>
+        <div>- This value is passed to web3</div>
+      </div>
+    );
   };
 }
 
