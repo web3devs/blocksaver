@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 
-import { withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router-dom';
 
 import '../App.css';
 import back from './left-arrow.png'
 import profile from './user.png'
 
 class NavBar extends Component {
-  state = {
-    report: true
-  }
-
-
 
   render() {
+    console.log(this.props.history.location.pathname)
     return (
       <div className="NavBar">
-        {this.state.report ?
-          <a href="/profile"><img src={profile} alt=""/></a>
-          :<a href="/"><img src={back} alt=""/></a>
+
+        {(this.props.history.location.pathname === "/") ?
+
+          <Link to="/profile"><img src={profile} alt=""/></Link>
+          :
+          <Link to="/"><img src={back} alt=""/></Link>
+
         }
 
         Points
@@ -27,4 +27,4 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
