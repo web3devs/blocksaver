@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import MapContainer from './MapContainer'
+import ReportForm from './ReportForm'
 
 import '../App.css';
 
@@ -15,7 +16,8 @@ class Report extends Component {
           containerElement={<div style={{ height: `400px` }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
-        <button>Report</button>
+        <ReportForm />
+
       </div>
     );
   }
