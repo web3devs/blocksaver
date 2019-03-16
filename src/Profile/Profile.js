@@ -18,7 +18,7 @@ const badges = [first, badge, badge2, medal, medal2, diamond]
 class Profile extends Component {
   render() {
     return (
-      <div className="Map">
+      <div className="Profile">
         {this.renderLifetimeCheckins()}
         {this.renderLastCheckin()}
         {this.renderBadges()}
@@ -54,7 +54,7 @@ class Profile extends Component {
   renderAccount = () => {
     return (
       <div>
-        <CheckinDisplay
+        <AccountDisplay
           title="Account"
           data={"0x123456789abcdef"}
           onClick={() => {
