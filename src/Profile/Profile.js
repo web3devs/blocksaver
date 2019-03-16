@@ -27,9 +27,7 @@ class Profile extends Component {
   renderLastCheckin = () => {
     return (
       <div>
-        <div>Last Checkin</div>
-        <div>- Most recent issue reported</div>
-        <div>- Most recent GPS recorded</div>
+        <CheckinDisplay title="Last Checkin" data={"Issue @ GPS loc"} />
       </div>
     );
   };
