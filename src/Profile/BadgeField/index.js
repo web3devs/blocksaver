@@ -7,8 +7,8 @@ class BadgeField extends Component {
     const { title, data, ...rest } = this.props;
 
     return (
-      <div className="Display">
-        <div>{title}</div>
+      <div className="BadgeDisplay">
+        <div className="BadgeTitle">{title}</div>
         {data.map(badge => (
           <img className="Badge" src={badge} alt="" />
         ))}

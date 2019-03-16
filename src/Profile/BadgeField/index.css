@@ -1,11 +1,14 @@
-.Display {
-  display: inline-block;
+.BadgeDisplay {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 50%;
   border-radius: 10px;
   background-color: rgba(110, 198, 152);
   color: black;
   border-width: 2px;
   border-color: black;
-  text-align: center;
   font-size: 22px;
   padding: 20px;
   outline: none;
@@ -14,14 +17,22 @@
   margin: 5px;
 }
 
-.Display:hover {
+.BadgeDisplay:hover {
   background-color: #FFFFFF;
   color: rgba(110, 198, 152);
   border-color: rgba(110, 198, 152);
 }
 
-.Badge{
-  border-radius: 1800px;
+.BadgeTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin: 10px;
+}
+
+.Badge {
+  border-radius: 180px;
   max-height: 10vh;
   margin: 5px;
 }
