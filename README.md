@@ -5,6 +5,6 @@ token contract address:
 
 
 crowdsale contract addres:
-  0x4759b81b58DD76f683bDCcA03fAeD02e2D56d771
+* 0x4759b81b58DD76f683bDCcA03fAeD02e2D56d771
 
 <img src='./Transport_Design.jpeg'>
