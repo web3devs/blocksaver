@@ -68,9 +68,9 @@ button:hover {
 
 .issues {
   overflow-y: scroll;
-  max-height: 20vh;
+  max-height: 15vh;
   border-radius: 10px;
-  background-color: #FFFFFF;
+  background-color: rgba(242, 242, 242, 1);
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
