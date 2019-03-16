@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import '../App.css';
-
-//------DEVELOPER VERSION--------//
 import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 
 const options = {
@@ -10,10 +8,22 @@ const options = {
   maximumAge: 0
 };
 
+const ReportMap = withGoogleMap(props => {
+    return (
+      <GoogleMap
+        center={{ lat: props.center.lat, lng: props.center.lng }}
+        zoom={ 13 }
+      >
+      <Marker position={{ lat: props.center.lat, lng: props.center.lng }} />
+
+     </GoogleMap>
+    )
+});
+
 class MapContainer extends Component {
     state = {
       lng: null,
-      lat: 33.1524164,
+      lat: null,
       loaded: false
     }
 
@@ -23,36 +33,26 @@ class MapContainer extends Component {
 
     success = (pos) => {
       let crd = pos.coords;
-      console.log("Latitude: ", crd.latitude, "Longitute: ", crd.longitude );
       this.setState({
-        lng: crd.latitude,
-        lat: crd.longitude,
+        lng: crd.longitude,
+        lat: crd.latitude,
         loaded: true,
       })
-      console.log(this.state)
     }
 
     error = (err) => {
       console.warn(`ERROR(${err.code}): ${err.message}`);
     }
 
-  //  lat: 33.1524164, lng: -94.01367979999999
+  //  lat: 35.1524164, lng: -90.01367979999999
 
    render() {
-     const ReportMap = withGoogleMap(props => (
-        <GoogleMap
-          center = { { lat: 35.1524164, lng: -90.01367979999999 } }
-          defaultZoom = { 13 }
-        >
-          <Marker position={{ lat: 35.1524164, lng: -90.01367979999999 }} />
-        </GoogleMap>
-     ));
 
    return(
-
       <div>
         {this.state.loaded ?
           <ReportMap
+            center={{lat: this.state.lat, lng: this.state.lng}}
             containerElement={ <div style={{ height: `500px`, width: '100%' }} /> }
             mapElement={ <div style={{ height: `100%` }} /> }
           />
