@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import AccountDisplay from "./AccountDisplay";
-import BadgeField from "./BadgeField";
-import CheckinDisplay from "./CheckinDisplay";
+import AccountDisplay from "./AccountDisplay.js";
+import BadgeField from "./BadgeField.js";
+import CheckinDisplay from "./CheckinDisplay.js";
 
 import "../App.css";
 
@@ -19,10 +19,12 @@ class Profile extends Component {
   render() {
     return (
       <div className="Profile">
-        {this.renderLifetimeCheckins()}
-        {this.renderLastCheckin()}
-        {this.renderBadges()}
-        {this.renderAccount()}
+        <div className="Displays">
+          {this.renderLifetimeCheckins()}
+          {this.renderLastCheckin()}
+          {this.renderBadges()}
+          {this.renderAccount()}
+        </div>
       </div>
     );
   }

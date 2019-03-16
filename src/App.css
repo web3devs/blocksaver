@@ -2,6 +2,17 @@ body {
   margin: 0;
 }
 
+.Profile, .Map {
+  background-color: rgba(242, 242, 242, 1);
+}
+
+.Profile {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .NavBar img {
   height: 8vh;
 }
@@ -21,13 +32,9 @@ body {
   max-width: 100%;
 }
 
-.Map {
-  background-color: rgba(242, 242, 242, 1);
+.mapMargin {
+ padding: 40px;
 }
-
- .mapMargin {
-   padding: 40px;
- }
 
 .mapSize {
   height: 60vh;
@@ -47,21 +54,19 @@ body {
   max-width: 100%;
 }
 
-button {
-  display: inline-block;
+.ReportForm button {
   border-radius: 10px;
   background-color: rgba(110, 198, 152);
   color: #FFFFFF;
   border-color: rgba(110, 198, 152);
   border-width: 2px;
-  text-align: center;
   font-size: 22px;
   padding: 20px;
   outline: none;
   margin: 5px;
 }
 
-button:hover {
+.ReportForm button:hover {
   background-color: white;
   color: rgba(110, 198, 152);
 }
@@ -84,7 +89,26 @@ button:hover {
   font-size: 20px;
 }
 
-.Profile {
-  display: flex;
-  flex-direction: column;
+.Displays {
+  width: 75%;
+}
+
+.Display {
+  flex: 1;
+  margin-top: 40px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(110, 198, 152);
+  color: black;
+  border-width: 2px;
+  border-color: black;
+  font-size: 22px;
+  outline: none;
+  cursor: pointer;
+}
+
+.Badge {
+  border-radius: 180px;
+  max-height: 10vh;
+  margin: 5px;
 }

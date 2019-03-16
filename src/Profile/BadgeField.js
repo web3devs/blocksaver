@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import "./index.css";
+import "../App.css";
 
 class BadgeField extends Component {
 
     showBadges = (data) => {
       // query to see how many tokens user has
-      data.map(badge => (
+      return data.map(badge => (
         <img className="Badge" src={badge} alt="" />
       ))
     }
@@ -14,7 +14,7 @@ class BadgeField extends Component {
       const { title, data, ...rest } = this.props;
 
       return (
-        <div className="BadgeDisplay">
+        <div className="Display">
           <div className="BadgeTitle">{title}</div>
           {this.showBadges(data)}
         </div>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import localStorage from "local-storage";
-import "./index.css";
+import "../App.css";
 
 class AccountDisplay extends Component {
   state = {
