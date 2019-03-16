@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import CheckinDisplay from "./CheckinDisplay";
+import BadgeField from "./BadgeField";
 
 import "../App.css";
 
@@ -35,9 +36,7 @@ class Profile extends Component {
   renderBadges = () => {
     return (
       <div>
-        <div>Badges</div>
-        <div>- Render wrapping flex box</div>
-        <div>- Badges are individual components</div>
+        <BadgeField title="Badges" data={"BADGE for each unique issue"} />
       </div>
     );
   };
