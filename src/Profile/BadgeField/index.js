@@ -3,7 +3,6 @@ import "./index.css";
 
 class BadgeField extends Component {
 
-
     showBadges = (data) => {
       // query to see how many tokens user has
       data.map(badge => (
