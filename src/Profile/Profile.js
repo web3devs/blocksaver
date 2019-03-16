@@ -45,7 +45,7 @@ class Profile extends Component {
   renderAccount = () => {
     return (
       <div>
-        <CheckinDisplay
+        <AccountDisplay
           title="Account"
           data={"0x123456789abcdef"}
           onClick={() => {
