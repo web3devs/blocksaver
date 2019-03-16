@@ -1,3 +1,7 @@
 .App {
   text-align: center;
 }
+
+.NavBar img {
+  height: 10vh
+}
