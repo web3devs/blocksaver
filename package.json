@@ -1,0 +1,9 @@
+{
+  "name": "blocksaver",
+  "version": "1.0.0",
+  "description": "to save lives",
+  "main": "index.js",
+  "repository": "https://github.com/web3devs/blocksaver.git",
+  "author": "insideoutzombie <david@web3devs.com>",
+  "license": "MIT"
+}
