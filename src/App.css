@@ -7,7 +7,7 @@ body {
 }
 
 .NavBar img {
-  height: 10vh;
+  height: 8vh;
 }
 
 .NavBar h1, a {
@@ -21,8 +21,13 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: rgba(110, 198, 152);
+  max-width: 100%;
 }
 
+#map {
+   height: 100%;
+ }
+ 
 button {
   display: inline-block;
   border-radius: 10px;
