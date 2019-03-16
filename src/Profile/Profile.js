@@ -6,6 +6,15 @@ import CheckinDisplay from "./CheckinDisplay";
 
 import "../App.css";
 
+import badge from './assets/badge.png'
+import badge2 from './assets/badge2.png'
+import diamond from './assets/diamond.png'
+import first from './assets/first.png'
+import medal from './assets/medal.png'
+import medal2 from './assets/medal2.png'
+
+const badges = [first, badge, badge2, medal, medal2, diamond]
+
 class Profile extends Component {
   render() {
     return (
@@ -37,7 +46,7 @@ class Profile extends Component {
   renderBadges = () => {
     return (
       <div>
-        <BadgeField title="Badges" data={"BADGE for each unique issue"} />
+        <BadgeField title="Badges" data={badges} />
       </div>
     );
   };
