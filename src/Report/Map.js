@@ -6,6 +6,7 @@ class Map extends Component {
     return (
       <div className="Map">
         Map
+        <button>Report</button>
       </div>
     );
   }

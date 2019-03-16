@@ -22,3 +22,25 @@ body {
   align-items: center;
   background-color: rgba(110, 198, 152);
 }
+
+button {
+  display: inline-block;
+  border-radius: 10px;
+  background-color: rgba(110, 198, 152);
+  color: black;
+  border-width: 2px;
+  border-color: black;
+  text-align: center;
+  font-size: 22px;
+  padding: 20px;
+  /* width: 200px; */
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #FFFFFF;
+  color: rgba(110, 198, 152);
+  border-color: rgba(110, 198, 152);
+}
