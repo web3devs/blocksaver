@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+
+import CheckinDisplay from "./CheckinDisplay";
+
 import "../App.css";
 
 class Profile extends Component {
@@ -16,8 +19,7 @@ class Profile extends Component {
   renderLifetimeCheckins = () => {
     return (
       <div>
-        <div>Lifetime Checkins</div>
-        <div>- Query contract for number of checkins</div>
+        <CheckinDisplay title="Lifetime Checkins" data={"# of checkins"} />
       </div>
     );
   };
