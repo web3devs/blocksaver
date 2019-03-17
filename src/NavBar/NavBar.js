@@ -6,6 +6,7 @@ import { Link, withRouter } from "react-router-dom";
 import "../App.css";
 import back from "./left-arrow.png";
 import profile from "./user.png";
+
 import ABI from "../ABI/tokenAbi";
 
 let tokenAddress = "0xD3724b06f9b16373d714a88adCc0289389aB3869";
@@ -42,7 +43,7 @@ class NavBar extends Component {
             <img src={back} alt="" />
           </Link>
         )}
-
+  
         <h1>${`test`}</h1>
       </div>
     );

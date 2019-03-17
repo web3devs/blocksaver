@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import localStorage from "local-storage";
-import "./index.css";
+import "../App.css";
 
 class AccountDisplay extends Component {
   state = {
@@ -19,10 +19,10 @@ class AccountDisplay extends Component {
   };
 
   render() {
-    const { title, data, ...rest } = this.props;
+    const { title } = this.props;
     return (
       <div className="Display">
-        <div>{title}</div>
+        <div><h3>{title}</h3></div>
         <input
           id="address"
           value={this.state.address}

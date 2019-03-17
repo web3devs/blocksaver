@@ -2,13 +2,16 @@ body {
   margin: 0;
 }
 
+/* --------------NavBar-------------- */
+
 .NavBar img {
   height: 8vh;
 }
 
-.NavBar h1, a {
+.NavBar h2, a {
   padding-right: 20px;
   padding-left: 20px;
+  color: white;
 }
 
 .NavBar {
@@ -21,22 +24,28 @@ body {
   max-width: 100%;
 }
 
-.Map {
-  background-color: rgba(242, 242, 242, 1);
+.NavBar img {
+  background-color: white;
+  border-radius: 10px;
 }
 
- .mapMargin {
-   padding: 40px;
- }
+.NavBar img:hover {
+  background-color: rgba(110, 198, 152);
+  border-radius: 10px;
+}
+
+/* ---------------Map----------------- */
 
 .mapSize {
-  height: 60vh;
+  height: 70vh;
   width: 100%;
 }
 
 .mapElement {
   height: 100%;
 }
+
+/* --------------Report-------------- */
 
 .ReportForm {
   display: flex;
@@ -45,46 +54,134 @@ body {
   align-items: center;
   background-color: rgba(110, 198, 152);
   max-width: 100%;
+  height: 20vh;
 }
 
-button {
-  display: inline-block;
-  border-radius: 10px;
-  background-color: rgba(110, 198, 152);
-  color: #FFFFFF;
-  border-color: rgba(110, 198, 152);
-  border-width: 2px;
-  text-align: center;
-  font-size: 22px;
-  padding: 20px;
-  outline: none;
-  margin: 5px;
-}
-
-button:hover {
-  background-color: white;
-  color: rgba(110, 198, 152);
-}
-
-.issues {
-  overflow-y: scroll;
-  max-height: 15vh;
+.ReportForm button {
+  height: 15vh;
   border-radius: 10px;
   background-color: rgba(242, 242, 242, 1);
+  color: rgba(110, 198, 152);
+
+  border-color: rgba(110, 198, 152);
+  border-width: 2px;
+  font-size: 22px;
+  outline: none;
+}
+
+.ReportForm button:hover {
+  background-color: rgba(110, 198, 152);
+  color: #FFFFFF;
+}
+
+/* -------------CheckBoxes------------- */
+
+.Profile, .Map {
+  background-color: rgba(242, 242, 242, 1);
+}
+
+.Profile {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Issues {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: flex-start;
+  justify-content: center;
+  overflow-y: scroll;
+  height: 15vh;
+  border-radius: 10px;
+  background-color: rgba(242, 242, 242, 1);
   max-width: 100%;
 }
 
-.issue {
+.Issue {
   color: rgba(110, 198, 152);
   padding: 10px;
+  padding-top: 20px;
   font-size: 20px;
 }
 
+/* --------------Profile-------------- */
+
+.Profile, .Map {
+  background-color: rgba(242, 242, 242, 1);
+}
+
 .Profile {
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+/* --------------Badges-------------- */
+
+.Badge {
+  border-radius: 180px;
+  max-height: 10vh;
+  margin: 10px;
+}
+
+/* --------------Displays-------------- */
+
+.Profile, .Map {
+  background-color: rgba(242, 242, 242, 1);
+}
+
+.Profile {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Displays {
+  width: 75%;
+}
+
+.Display {
+  flex: 1;
+  margin-top: 40px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(110, 198, 152);
+  color: black;
+  border-width: 2px;
+  border-color: black;
+  font-size: 22px;
+  outline: none;
+  cursor: pointer;
+}
+
+.Display #address {
+  width: 60%;
+  margin-right: 20px;
+  outline: none;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.Display h3 {
+  margin: 5px;
+  text-align: center;
+  color: white;
+}
+
+.Display button {
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 12px;
+  width: 10%;
+  outline: none;
+  background-color: rgba(242, 242, 242, 1);
+  color: rgba(110, 198, 152);
+}
+
+.Display button:hover {
+  background-color: rgba(110, 198, 152);
+  color: #FFFFFF;
 }

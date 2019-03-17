@@ -24,6 +24,11 @@ const checkboxes = [
     key: 'checkBox5',
     label: 'Add Bus Route',
   },
+  {
+    name: 'Install Bike Rack',
+    key: 'checkBox5',
+    label: 'Install Bike Rack',
+  },
 ];
 
 export default checkboxes

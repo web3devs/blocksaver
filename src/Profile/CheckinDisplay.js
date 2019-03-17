@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import "./index.css";
+import "../App.css";
 
 class CheckinDisplay extends Component {
   render() {
-    const { title, data, ...rest } = this.props;
+    const { title, data } = this.props;
     return (
       <div className="Display">
-        <div>{title}</div>
+        <div><h3>{title}</h3></div>
         <div>{data}</div>
       </div>
     );

@@ -1,28 +1,22 @@
 import React, { Component } from "react";
 
-import AccountDisplay from "./AccountDisplay";
-import BadgeField from "./BadgeField";
-import CheckinDisplay from "./CheckinDisplay";
+import AccountDisplay from "./AccountDisplay.js";
+import BadgeField from "./BadgeField.js";
+import CheckinDisplay from "./CheckinDisplay.js";
+import badges from './Badges.js'
 
 import "../App.css";
-
-import badge from './assets/badge.png'
-import badge2 from './assets/badge2.png'
-import diamond from './assets/diamond.png'
-import first from './assets/first.png'
-import medal from './assets/medal.png'
-import medal2 from './assets/medal2.png'
-
-const badges = [first, badge, badge2, medal, medal2, diamond]
 
 class Profile extends Component {
   render() {
     return (
       <div className="Profile">
-        {this.renderLifetimeCheckins()}
-        {this.renderLastCheckin()}
-        {this.renderBadges()}
-        {this.renderAccount()}
+        <div className="Displays">
+          {this.renderLifetimeCheckins()}
+          {this.renderLastCheckin()}
+          {this.renderBadges()}
+          {this.renderAccount()}
+        </div>
       </div>
     );
   }
