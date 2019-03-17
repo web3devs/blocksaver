@@ -10,7 +10,6 @@ import profile from "./user.png";
 import ABI from "../ABI/tokenAbi";
 
 let tokenAddress = "0x9aA9D3FefFE93D4a9e51b567B9ed5412dE75a59D";
-let walletAddress = window.web3.eth.defaultAccount;
 
 // let value = Web3.eth.toBigNumber(4042625);
 // let blockNumber = window.web3.getBlockNumber();

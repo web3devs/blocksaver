@@ -1,13 +1,42 @@
 import React, { Component } from "react";
+import Web3 from "web3";
+
+import ABI from "../ABI/crowdsaleABI";
 
 import AccountDisplay from "./AccountDisplay.js";
 import BadgeField from "./BadgeField.js";
 import CheckinDisplay from "./CheckinDisplay.js";
-import badges from './Badges.js'
+import badges from "./Badges.js";
 
 import "../App.css";
 
+let tokenAddress = "0x0B723E44CEC6EDB8883F61b9cB1650D341f99604";
+
 class Profile extends Component {
+  componentWillMount() {
+    this.loadBlockchainData();
+  }
+
+  async loadBlockchainData() {
+    const web3 = new Web3(Web3.givenProvider || "http://localhost:8545");
+    const accounts = await web3.eth.getAccounts();
+    this.setState({ account: accounts[0] });
+    const crowdsaleContract = new web3.eth.Contract(ABI, tokenAddress);
+    this.setState({ crowdsaleContract });
+    let checkins = await crowdsaleContract.methods
+      .balanceOf(this.state.account)
+      .call();
+    this.setState({ checkins });
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      account: "",
+      checkins: 0,
+      lastCheckin: ""
+    };
+  }
   render() {
     return (
       <div className="Profile">
@@ -48,13 +77,7 @@ class Profile extends Component {
   renderAccount = () => {
     return (
       <div>
-        <AccountDisplay
-          title="Account"
-          data={"0x123456789abcdef"}
-          onClick={() => {
-            alert("onClick - Edit Account Address, not implimented yet");
-          }}
-        />
+        <AccountDisplay title="Account" />
       </div>
     );
   };

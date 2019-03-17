@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import "../App.css";
 
 class CheckinDisplay extends Component {
@@ -6,7 +7,9 @@ class CheckinDisplay extends Component {
     const { title, data } = this.props;
     return (
       <div className="Display">
-        <div><h3>{title}</h3></div>
+        <div>
+          <h3>{title}</h3>
+        </div>
         <div>{data}</div>
       </div>
     );
