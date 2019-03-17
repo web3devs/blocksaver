@@ -107,6 +107,26 @@ body {
   cursor: pointer;
 }
 
+.Display #address {
+    width: 60%;
+    margin-right: 20px;
+    outline: none;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.Display button {
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 12px;
+  width: 10%;
+}
+
+.Display button:hover {
+  background-color: rgba(242, 242, 242, 1);
+  color: rgba(110, 198, 152);
+}
+
 .Badge {
   border-radius: 180px;
   max-height: 10vh;
