@@ -124,7 +124,7 @@ body {
 .Badge {
   border-radius: 180px;
   max-height: 10vh;
-  margin: 10px;
+  margin: 5px;
 }
 
 /* --------------Displays-------------- */
@@ -145,7 +145,7 @@ body {
 
 .Display {
   flex: 1;
-  margin-top: 40px;
+  margin-top: 15px;
   padding: 10px;
   border-radius: 10px;
   background-color: rgba(110, 198, 152);
@@ -158,7 +158,7 @@ body {
 }
 
 .Display #address {
-  width: 60%;
+  width: 50%;
   margin-right: 20px;
   outline: none;
   border-radius: 10px;
