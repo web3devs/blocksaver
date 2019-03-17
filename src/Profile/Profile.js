@@ -24,7 +24,7 @@ class Profile extends Component {
   renderLifetimeCheckins = () => {
     return (
       <div>
-        <CheckinDisplay title="Lifetime Checkins" data={Math.floor(Math.random() * 100) + 1} />
+        <CheckinDisplay title="Lifetime Checkins" data={window.sessionStorage.tokens} />
       </div>
     );
   };

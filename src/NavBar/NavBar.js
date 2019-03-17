@@ -13,14 +13,25 @@ let tokenAddress = "0xD3724b06f9b16373d714a88adCc0289389aB3869";
 let walletAddress = window.web3.eth.defaultAccount;
 
 let contract = window.web3.eth.contract(ABI).at(tokenAddress);
-// let value = Web3.eth.toBigNumber(4042625);
-// let blockNumber = window.web3.getBlockNumber();
 
 class NavBar extends Component {
-  componentDidMount() {
 
-    // @dev: this returns INVALID NUMBER OF ARGUMENTS TO SOLIDITY FUNCTION
-    // console.log(contract.balanceOf(walletAddress));
+  state = {
+    tokens: null
+  }
+
+  componentDidMount(){
+    this.setTokens()
+  }
+
+  setTokens = () => {
+    if (window.sessionStorage.tokens) {
+      this.setState({tokens: window.sessionStorage.tokens})
+    } else {
+      this.setState({tokens: 0})
+      window.sessionStorage.setItem("tokens", 0)
+      console.log("set tokens: ", window.sessinoStorage.tokens)
+    }
   }
 
   render() {
@@ -36,7 +47,9 @@ class NavBar extends Component {
           </Link>
         )}
         <h2>BlockSaver</h2>
-        <h2>29 Tokens</h2>
+        <h2>{window.sessionStorage.tokens ?
+        window.sessionStorage.tokens
+        : "Loading..."} Tokens</h2>
       </div>
     );
   }

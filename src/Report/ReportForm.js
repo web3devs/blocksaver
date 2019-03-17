@@ -17,8 +17,10 @@ class ReportForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     let currentTime = new Date();
-    console.log(this.state.checkedItems)
+    let tokens = parseInt(window.sessionStorage.tokens)
+    let addToken = tokens + 1;
     window.sessionStorage.setItem("time", currentTime)
+    window.sessionStorage.setItem("tokens", addToken)
     let checked = {}
     this.state.checkedItems.forEach((item, i) => (
       checked[i] = item
