@@ -37,6 +37,7 @@ class NavBar extends Component {
       this.setState({tokens: 0})
       window.sessionStorage.setItem("tokens", 0)
     }
+  }
 
   async loadBlockchainData() {
     const web3 = new Web3(Web3.givenProvider || "http://localhost:8545");
@@ -48,7 +49,6 @@ class NavBar extends Component {
       .balanceOf(this.state.account)
       .call();
     this.setState({ balance });
-  }
   }
 
   render() {

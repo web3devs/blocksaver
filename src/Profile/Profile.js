@@ -4,10 +4,36 @@ import AccountDisplay from "./AccountDisplay.js";
 import BadgeField from "./BadgeField.js";
 import CheckinDisplay from "./CheckinDisplay.js";
 import badges from './Badges.js'
+import Web3 from "web3";
+import ABI from "../ABI/tokenAbi";
 
 import "../App.css";
 
+let crowdSaleAddress = "0x0B723E44CEC6EDB8883F61b9cB1650D341f99604"
+
 class Profile extends Component {
+
+  state = {
+    account: "",
+    balance: 0,
+    events: null
+  }
+
+  componentWillMount() {
+    this.loadBlockchainData();
+  }
+
+  async loadBlockchainData() {
+    const web3 = new Web3(Web3.givenProvider || "http://localhost:8545");
+    const accounts = await web3.eth.getAccounts();
+    this.setState({ account: accounts[0] });
+    const tokenContract = new web3.eth.Contract(ABI, crowdSaleAddress);
+    this.setState({ tokenContract });
+    let events = tokenContract.givenProvider._eventsCount
+    this.setState({events: events})
+    debugger
+  }
+
   render() {
     return (
       <div className="Profile">
@@ -24,7 +50,7 @@ class Profile extends Component {
   renderLifetimeCheckins = () => {
     return (
       <div>
-        <CheckinDisplay title="Lifetime Checkins" data={window.sessionStorage.tokens} />
+        <CheckinDisplay title="Lifetime Checkins" data={this.state.events} />
       </div>
     );
   };
