@@ -8,7 +8,7 @@ body {
   height: 8vh;
 }
 
-.NavBar h1, a {
+.NavBar h2, a {
   padding-right: 20px;
   padding-left: 20px;
   color: white;
@@ -66,7 +66,6 @@ body {
   border-color: rgba(110, 198, 152);
   border-width: 2px;
   font-size: 22px;
-  padding: 20px;
   outline: none;
 }
 
