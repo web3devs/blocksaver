@@ -1,16 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import checkboxes from './Checkboxes';
 import Checkbox from './Checkbox';
 
-class CheckboxContainer extends React.Component {
+class CheckboxContainer extends Component {
 
   render() {
     return (
       <div className="issues">
         {
-          checkboxes.map(item => (
-              <div className="issue">
+          checkboxes.map((item, i)=> (
+              <div key={i} className="issue">
                 <label key={item.key}>
                   <Checkbox
                     name={item.name}

@@ -1,28 +1,30 @@
 import React, { Component } from "react";
-import Web3 from "web3";
+// import Web3 from "web3";
 
 import { Link, withRouter } from "react-router-dom";
 
 import "../App.css";
 import back from "./left-arrow.png";
 import profile from "./user.png";
-import ABI from '../ABI/ABI'
+// import ABI from '../ABI/ABI'
 
-let tokenAddress = "0xF1D4d34D7A16D5b1F9dC19E9ea9675AB0B838661"
-let walletAddress = window.web3.eth.defaultAccount
-let contract = window.web3.eth.contract(ABI).at(tokenAddress)
-let blockNumber = window.web3.eth.getBlockNumber
-let balance, error;
+// let tokenAddress = "0xF1D4d34D7A16D5b1F9dC19E9ea9675AB0B838661"
+// let walletAddress = window.web3.eth.defaultAccount
+// let contract = window.web3.eth.contract(ABI).at(tokenAddress)
+// let blockNumber = window.web3.eth.getBlockNumber
+// let balance, error;
 
 class NavBar extends Component {
 
-  callback = (error, balance) => {
-    if(!error) {
-      console.log(JSON.stringify(balance))
-    } else {
-      console.log(error)
-    }
-  }
+  // callback = (error, balance) => {
+  //   if(!error) {
+  //     console.log(JSON.stringify(balance))
+  //   } else {
+  //     console.log(error)
+  //   }
+  // }
+
+  // {contract.balanceOf(walletAddress, () => this.callback())}
 
   render() {
     return (
@@ -37,7 +39,6 @@ class NavBar extends Component {
           </Link>
         )}
         <h1>
-        {contract.balanceOf(walletAddress, () => this.callback())}
         Points</h1>
       </div>
     );

@@ -19,7 +19,7 @@ class AccountDisplay extends Component {
   };
 
   render() {
-    const { title, data, ...rest } = this.props;
+    const { title } = this.props;
     return (
       <div className="Display">
         <div>{title}</div>

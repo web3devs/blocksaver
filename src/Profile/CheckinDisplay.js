@@ -3,7 +3,7 @@ import "../App.css";
 
 class CheckinDisplay extends Component {
   render() {
-    const { title, data, ...rest } = this.props;
+    const { title, data } = this.props;
     return (
       <div className="Display">
         <div>{title}</div>
