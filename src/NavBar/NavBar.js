@@ -9,7 +9,7 @@ import profile from "./user.png";
 
 import ABI from "../ABI/tokenAbi";
 
-let tokenAddress = "0xD3724b06f9b16373d714a88adCc0289389aB3869";
+let tokenAddress = "0x7eeab3b3fb08a8646cbaae0da007c21d95fc0c6c";
 let walletAddress = window.web3.eth.defaultAccount;
 
 let contract = window.web3.eth.contract(ABI).at(tokenAddress);
