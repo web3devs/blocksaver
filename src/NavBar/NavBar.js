@@ -6,22 +6,29 @@ import { Link, withRouter } from "react-router-dom";
 import "../App.css";
 import back from "./left-arrow.png";
 import profile from "./user.png";
-import ABI from '../ABI/ABI'
 
-let tokenAddress = "0xD3724b06f9b16373d714a88adCc0289389aB3869"
-let walletAddress = window.web3.eth.defaultAccount
-let contract = window.web3.eth.contract(ABI).at(tokenAddress)
-let blockNumber = window.web3.eth.getBlockNumber
-let balance, error;
+import ABI from "../ABI/tokenAbi";
+
+let tokenAddress = "0xD3724b06f9b16373d714a88adCc0289389aB3869";
+let walletAddress = window.web3.eth.defaultAccount;
+
+let contract = window.web3.eth.contract(ABI).at(tokenAddress);
+// let value = Web3.eth.toBigNumber(4042625);
+// let blockNumber = window.web3.getBlockNumber();
 
 class NavBar extends Component {
+  componentDidMount() {
+    console.log(contract);
+    // console.log(value);
+    // console.log(blockNumber);
+    console.log(
+      contract.balanceOf(walletAddress, 4042625, err => {
+        alert(err);
+      })
+    );
 
-  callback = (error, balance) => {
-    if(!error) {
-      console.log(JSON.stringify(balance))
-    } else {
-      console.log(error)
-    }
+    // @dev: this returns INVALID NUMBER OF ARGUMENTS TO SOLIDITY FUNCTION
+    // console.log(contract.balanceOf(walletAddress));
   }
 
   render() {
@@ -36,10 +43,8 @@ class NavBar extends Component {
             <img src={back} alt="" />
           </Link>
         )}
-        <h2>BlockSaver</h2>
-        <h2>
-        {contract.balanceOf(walletAddress, () => this.callback())}
-        Points</h2>
+  
+        <h1>${`test`}</h1>
       </div>
     );
   }
