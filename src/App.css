@@ -2,16 +2,7 @@ body {
   margin: 0;
 }
 
-.Profile, .Map {
-  background-color: rgba(242, 242, 242, 1);
-}
-
-.Profile {
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+/* --------------NavBar-------------- */
 
 .NavBar img {
   height: 8vh;
@@ -43,6 +34,8 @@ body {
   border-radius: 10px;
 }
 
+/* ---------------Map----------------- */
+
 .mapSize {
   height: 70vh;
   width: 100%;
@@ -51,6 +44,8 @@ body {
 .mapElement {
   height: 100%;
 }
+
+/* --------------Report-------------- */
 
 .ReportForm {
   display: flex;
@@ -79,7 +74,19 @@ body {
   color: rgba(110, 198, 152);
 }
 
-.issues {
+/* -------------CheckBoxes------------- */
+
+.Profile, .Map {
+  background-color: rgba(242, 242, 242, 1);
+}
+
+.Profile {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Issues {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -92,13 +99,38 @@ body {
   max-width: 100%;
 }
 
-.issue {
+.Issue {
   color: rgba(110, 198, 152);
   padding: 10px;
   padding-top: 20px;
   font-size: 20px;
 }
 
+/* --------------Profile-------------- */
+
+.Profile, .Map {
+  background-color: rgba(242, 242, 242, 1);
+}
+
+.Profile {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --------------Displays-------------- */
+
+.Profile, .Map {
+  background-color: rgba(242, 242, 242, 1);
+}
+
+.Profile {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .Displays {
   width: 75%;
 }

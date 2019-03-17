@@ -6,10 +6,10 @@ class CheckboxContainer extends Component {
 
   render() {
     return (
-      <div className="issues">
+      <div className="Issues">
         {
           checkboxes.map((item, i)=> (
-              <div key={i} className="issue">
+              <div key={i} className="Issue">
                 <label key={item.key}>
                   <Checkbox
                     name={item.name}
