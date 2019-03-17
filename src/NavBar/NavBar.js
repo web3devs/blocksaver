@@ -18,14 +18,6 @@ let contract = window.web3.eth.contract(ABI).at(tokenAddress);
 
 class NavBar extends Component {
   componentDidMount() {
-    console.log(contract);
-    // console.log(value);
-    // console.log(blockNumber);
-    console.log(
-      contract.balanceOf(walletAddress, 4042625, err => {
-        alert(err);
-      })
-    );
 
     // @dev: this returns INVALID NUMBER OF ARGUMENTS TO SOLIDITY FUNCTION
     // console.log(contract.balanceOf(walletAddress));
