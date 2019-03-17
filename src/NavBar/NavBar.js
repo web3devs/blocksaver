@@ -43,7 +43,7 @@ class NavBar extends Component {
             <img src={back} alt="" />
           </Link>
         )}
-
+        <h2>BlockSaver</h2>
         <h2>${`test`}</h2>
       </div>
     );
