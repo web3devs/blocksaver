@@ -19,8 +19,8 @@ let balance;
 
 class NavBar extends Component {
   componentDidMount() {
-    contract.balanceOf(walletAddress, (err, balance) => {
-      !err ? (balance = balance) : console.log(err);
+    contract.balanceOf(walletAddress, 4045020, (err, res) => {
+      !err ? (balance = res) : console.log(err);
     });
 
     console.log(contract);
