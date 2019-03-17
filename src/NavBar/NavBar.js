@@ -9,23 +9,24 @@ import profile from "./user.png";
 
 import ABI from "../ABI/tokenAbi";
 
-let tokenAddress = "0x7eeab3b3fb08a8646cbaae0da007c21d95fc0c6c";
+let tokenAddress = "0x9aA9D3FefFE93D4a9e51b567B9ed5412dE75a59D";
 let walletAddress = window.web3.eth.defaultAccount;
 
 let contract = window.web3.eth.contract(ABI).at(tokenAddress);
+let balance;
 // let value = Web3.eth.toBigNumber(4042625);
 // let blockNumber = window.web3.getBlockNumber();
 
 class NavBar extends Component {
   componentDidMount() {
+    contract.balanceOf(walletAddress, (err, balance) => {
+      !err ? (balance = balance) : console.log(err);
+    });
+
     console.log(contract);
     // console.log(value);
     // console.log(blockNumber);
-    console.log(
-      contract.balanceOf(walletAddress, 4042625, err => {
-        alert(err);
-      })
-    );
+    console.log(balance);
 
     // @dev: this returns INVALID NUMBER OF ARGUMENTS TO SOLIDITY FUNCTION
     // console.log(contract.balanceOf(walletAddress));
@@ -44,7 +45,7 @@ class NavBar extends Component {
           </Link>
         )}
         <h2>BlockSaver</h2>
-        <h2>${`test`}</h2>
+        <h2>{balance}</h2>
       </div>
     );
   }
