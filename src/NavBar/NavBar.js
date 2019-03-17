@@ -43,8 +43,8 @@ class NavBar extends Component {
             <img src={back} alt="" />
           </Link>
         )}
-  
-        <h1>${`test`}</h1>
+
+        <h2>${`test`}</h2>
       </div>
     );
   }
