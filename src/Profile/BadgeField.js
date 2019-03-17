@@ -5,7 +5,7 @@ class BadgeField extends Component {
 
     showBadges = (data) => {
       // query to see how many tokens user has
-      return data.map(badge => (
+      return data.slice(0, window.sessionStorage.tokens).map(badge => (
         <img className="Badge" src={badge} alt="" />
       ))
     }

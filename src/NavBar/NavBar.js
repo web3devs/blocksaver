@@ -30,7 +30,6 @@ class NavBar extends Component {
     } else {
       this.setState({tokens: 0})
       window.sessionStorage.setItem("tokens", 0)
-      console.log("set tokens: ", window.sessinoStorage.tokens)
     }
   }
 
