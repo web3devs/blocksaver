@@ -33,6 +33,16 @@ body {
   max-width: 100%;
 }
 
+.NavBar img {
+  background-color: rgba(110, 198, 152);
+  border-radius: 10px;
+}
+
+.NavBar img:hover {
+  background-color: white;
+  border-radius: 10px;
+}
+
 .mapSize {
   height: 70vh;
   width: 100%;
@@ -108,11 +118,15 @@ body {
 }
 
 .Display #address {
-    width: 60%;
-    margin-right: 20px;
-    outline: none;
-    border-radius: 10px;
-    padding: 5px;
+  width: 60%;
+  margin-right: 20px;
+  outline: none;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.Display h3 {
+  margin: 5px;
 }
 
 .Display button {

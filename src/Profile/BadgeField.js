@@ -15,7 +15,7 @@ class BadgeField extends Component {
 
       return (
         <div className="Display">
-          <div className="BadgeTitle">{title}</div>
+          <div className="BadgeTitle"><h3>{title}</h3></div>
           {this.showBadges(data)}
         </div>
       );

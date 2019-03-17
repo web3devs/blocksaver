@@ -22,7 +22,7 @@ class AccountDisplay extends Component {
     const { title } = this.props;
     return (
       <div className="Display">
-        <div>{title}</div>
+        <div><h3>{title}</h3></div>
         <input
           id="address"
           value={this.state.address}
