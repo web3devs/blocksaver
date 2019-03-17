@@ -12,24 +12,32 @@ import ABI from "../ABI/tokenAbi";
 let tokenAddress = "0x9aA9D3FefFE93D4a9e51b567B9ed5412dE75a59D";
 let walletAddress = window.web3.eth.defaultAccount;
 
-let contract = window.web3.eth.contract(ABI).at(tokenAddress);
-let balance;
 // let value = Web3.eth.toBigNumber(4042625);
 // let blockNumber = window.web3.getBlockNumber();
 
 class NavBar extends Component {
-  componentDidMount() {
-    contract.balanceOf(walletAddress, 4045080, (err, res) => {
-      !err ? (balance = res) : console.log(err);
-    });
+  componentWillMount() {
+    this.loadBlockchainData();
+  }
 
-    console.log(contract);
-    // console.log(value);
-    // console.log(blockNumber);
-    console.log(balance);
+  async loadBlockchainData() {
+    const web3 = new Web3(Web3.givenProvider || "http://localhost:8545");
+    const accounts = await web3.eth.getAccounts();
+    this.setState({ account: accounts[0] });
+    const tokenContract = new web3.eth.Contract(ABI, tokenAddress);
+    this.setState({ tokenContract });
+    let balance = await tokenContract.methods
+      .balanceOf(this.state.account)
+      .call();
+    this.setState({ balance });
+  }
 
-    // @dev: this returns INVALID NUMBER OF ARGUMENTS TO SOLIDITY FUNCTION
-    // console.log(contract.balanceOf(walletAddress));
+  constructor(props) {
+    super(props);
+    this.state = {
+      account: "",
+      balance: 0
+    };
   }
 
   render() {
@@ -45,7 +53,7 @@ class NavBar extends Component {
           </Link>
         )}
         <h2>BlockSaver</h2>
-        <h2>{balance}</h2>
+        <h2>${this.state.balance / 1000000000000000000}</h2>
       </div>
     );
   }
