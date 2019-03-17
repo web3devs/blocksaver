@@ -20,6 +20,7 @@ body {
 .NavBar h1, a {
   padding-right: 20px;
   padding-left: 20px;
+  color: white;
 }
 
 .NavBar {
@@ -30,11 +31,6 @@ body {
   align-items: center;
   background-color: rgba(110, 198, 152);
   max-width: 100%;
-}
-
-.mapMargin {
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
 .mapSize {

@@ -38,8 +38,8 @@ class NavBar extends Component {
             <img src={back} alt="" />
           </Link>
         )}
-        <h1>
-        Points</h1>
+        <h1>BlockSaver</h1>
+        <h1>643 Points</h1>
       </div>
     );
   }
