@@ -25,12 +25,12 @@ body {
 }
 
 .NavBar img {
-  background-color: rgba(110, 198, 152);
+  background-color: white;
   border-radius: 10px;
 }
 
 .NavBar img:hover {
-  background-color: white;
+  background-color: rgba(110, 198, 152);
   border-radius: 10px;
 }
 
@@ -60,8 +60,9 @@ body {
 .ReportForm button {
   height: 15vh;
   border-radius: 10px;
-  background-color: rgba(110, 198, 152);
-  color: #FFFFFF;
+  background-color: rgba(242, 242, 242, 1);
+  color: rgba(110, 198, 152);
+
   border-color: rgba(110, 198, 152);
   border-width: 2px;
   font-size: 22px;
@@ -70,8 +71,8 @@ body {
 }
 
 .ReportForm button:hover {
-  background-color: rgba(242, 242, 242, 1);
-  color: rgba(110, 198, 152);
+  background-color: rgba(110, 198, 152);
+  color: #FFFFFF;
 }
 
 /* -------------CheckBoxes------------- */
@@ -119,6 +120,14 @@ body {
   align-items: center;
 }
 
+/* --------------Badges-------------- */
+
+.Badge {
+  border-radius: 180px;
+  max-height: 10vh;
+  margin: 10px;
+}
+
 /* --------------Displays-------------- */
 
 .Profile, .Map {
@@ -159,6 +168,8 @@ body {
 
 .Display h3 {
   margin: 5px;
+  text-align: center;
+  color: white;
 }
 
 .Display button {
@@ -166,15 +177,12 @@ body {
   padding: 5px;
   font-size: 12px;
   width: 10%;
-}
-
-.Display button:hover {
+  outline: none;
   background-color: rgba(242, 242, 242, 1);
   color: rgba(110, 198, 152);
 }
 
-.Badge {
-  border-radius: 180px;
-  max-height: 10vh;
-  margin: 5px;
+.Display button:hover {
+  background-color: rgba(110, 198, 152);
+  color: #FFFFFF;
 }
