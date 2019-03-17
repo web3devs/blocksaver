@@ -12,12 +12,18 @@ class ReportForm extends Component {
     const item = e.target.name;
     const isChecked = e.target.checked;
     this.setState(prevState => ({ checkedItems: prevState.checkedItems.set(item, isChecked) }));
-
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(this.state.checkedItems, window.sessionStorage.location)
+    let currentTime = new Date();
+    console.log(this.state.checkedItems)
+    window.sessionStorage.setItem("time", currentTime)
+    let checked = {}
+    this.state.checkedItems.forEach((item, i) => (
+      checked[i] = item
+    ))
+    window.sessionStorage.setItem("checkedItems", JSON.stringify(checked))
     this.props.history.push('/profile')
   }
 

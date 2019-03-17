@@ -36,7 +36,7 @@ class NavBar extends Component {
           </Link>
         )}
         <h2>BlockSaver</h2>
-        <h2>${`test`}</h2>
+        <h2>29 Tokens</h2>
       </div>
     );
   }
