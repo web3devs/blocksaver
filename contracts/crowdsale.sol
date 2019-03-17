@@ -33,7 +33,7 @@ contract Crowdsale {
         deadline = now + durationInMinutes * 1 minutes;
         price = etherCostOfEachToken * 1 ether;
         tokenReward = token(addressOfTokenUsedAsReward);
-        tokenEmission = 1;
+        tokenEmission = 1 ether;
     }
     /**
      * Fallback function
